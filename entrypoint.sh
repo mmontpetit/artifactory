@@ -2,6 +2,6 @@
 
 time=$(date)
 echo ::set-output name=time::$time
-echo "$ARTIFACTORY_PASSWORD" | docker login "$ARTIFACTORY_REGISTRY_URL" -u "$ARTIFACTORY_USERNAME" --password-stdin
+echo "$INPUT_ARTIFACTORY-PASSWORD" | docker login "$INPUT_ARTIFACTORY-DOCKER-URL" -u "$INPUT_ARTIFACTORY-USERNAME" --password-stdin
 
 
