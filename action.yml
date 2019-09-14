@@ -1,15 +1,25 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Artifactory'
+description: 'Yep This is how we do it'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  artifactory-password:  # id of input
+    description: 'Artifactory Password'
     required: true
-    default: 'World'
+    default: 'required'
+  artifactory-username:  # id of input
+    description: 'Artifactory User Name'
+    required: true
+    default: 'required'
+  artifactory-docker-url:  # id of input
+    description: 'Docker Repo URL'
+    required: true
+    default: 'qliktech-docker-infrastructure.jfrog.io'
 outputs:
   time: # id of output
-    description: 'The time we we greeted you'
+    description: 'Docker Artifactory Login'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.artifactory-username }}
+    - ${{ inputs.artifactory-password }}
+    - ${{ inputs.artifactory-docker-url }}
