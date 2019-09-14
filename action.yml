@@ -1,15 +1,15 @@
 name: 'Artifactory'
 description: 'Yep This is how we do it'
 inputs:
-  artifactory-password:  # id of input
+  artifactory_password:  # id of input
     description: 'Artifactory Password'
     required: true
     default: 'required'
-  artifactory-username:  # id of input
+  artifactory_username:  # id of input
     description: 'Artifactory User Name'
     required: true
     default: 'required'
-  artifactory-docker-url:  # id of input
+  artifactory_docker_url:  # id of input
     description: 'Docker Repo URL'
     required: true
     default: 'qliktech-docker-infrastructure.jfrog.io'
@@ -20,6 +20,8 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.artifactory-username }}
-    - ${{ inputs.artifactory-password }}
-    - ${{ inputs.artifactory-docker-url }}
+    - ${{ inputs.artifactory_username }}
+    - ${{ inputs.artifactory_password }}
+    - ${{ inputs.artifactory_docker_url }}
+
+    
